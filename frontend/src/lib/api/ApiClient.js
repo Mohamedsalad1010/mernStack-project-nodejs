@@ -2,7 +2,7 @@ import axios from "axios";
 import { useActionState } from "react";
 import useAuthStore from "../store/AuthStorage";
 
-const API_URL = 'http://localhost:3000/api'
+const API_URL = 'https://mernstack-project-nodejs.onrender.com/api'
 
 const Api = axios.create({
     baseURL: API_URL,
