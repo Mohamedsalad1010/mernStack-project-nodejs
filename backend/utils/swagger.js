@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const options = {
-  definition: {
+  swaggerDefinition: {
     openapi: '3.0.0',
     info: {
       title: 'Task Manager API',
