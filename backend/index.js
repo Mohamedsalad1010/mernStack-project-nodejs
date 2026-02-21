@@ -32,7 +32,7 @@ app.use(limiter);
 
 app.use(cors(
     {
-        origin: ["http://localhost:5173"]
+        origin: ["http://localhost:5173" , 'https://mernstack-project-nodejs.onrender.com']
     }
 ))
 if (process.env.NODE_ENV === "development") {
