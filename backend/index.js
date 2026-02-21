@@ -54,18 +54,19 @@ app.use("/api", (req, res) => {
 
 // server frontend in production
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-  // serve frontend app
-  app.get(/.*/, (req, res) => {
-  
-       res.send(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
-  
-  });
+    const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+    app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+    // Serve the frontend app
+
+    app.get(/.*/, (req, res) => {
+        res.send(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
+    })
 }
 
 
