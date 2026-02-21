@@ -29,6 +29,12 @@ const PORT = process.env.PORT || 3000;
 
 app.use(helmet());
 app.use(limiter);
+
+app.use(cors(
+    {
+        origin: ["http://localhost:5173"]
+    }
+))
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
